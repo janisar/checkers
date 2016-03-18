@@ -1,0 +1,153 @@
+.checkersBoard {
+	margin: 2%;
+	width: 95%;
+	min-width: 35%;
+	height: 97%;
+	min-height: 75%;
+	border: 1%;
+	border-style: inherit;
+}
+.boardBox {
+	float: right;
+	width: 12.5%;
+	min-width: 12.5%;
+	height: 100%;
+}
+.box_1 {
+	background-color: darkslategrey;	
+}
+.box_2 {
+	background-color: whitesmoke;
+}
+.checkersRow {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	min-width: 100%;
+	height: 12.5%;
+}
+
+section.piece {
+	position: relative;
+	width: 60%;
+	height: 60%;
+	margin: auto;
+	margin-top: 15% !important;
+	border-radius: 100px;
+	z-index: 10;
+	-webkit-box-shadow: 3px 10px 9px -1px rgba(0,0,0,0.75);
+	-moz-box-shadow: 3px 10px 9px -1px rgba(0,0,0,0.75);
+	box-shadow: 3px 10px 9px -1px rgba(0,0,0,0.75);
+}
+section.whitePiece {
+	background-color: white;
+}
+section.whitePiece:HOVER {
+	cursor: pointer;
+}
+section.blackPiece {
+	background-color: black;	
+}
+section.blackPiece:HOVER {
+	cursor: pointer;
+}
+section.disabled {
+	cursor: no-drop;
+}
+section.disabled:HOVER {
+	cursor: no-drop;
+}
+
+.separator {
+	height: 150px;
+}
+body {
+  color: #333;
+  padding: 20px;
+  text-align: center;
+  font-family: Arial;
+}
+/* 3D Cube */
+.space3d {
+  perspective: 1000px;
+  width: 500px;
+  height: 500px;
+  text-align: center;
+  display: inline-block;
+}
+._3dbox {
+  display: inline-block;
+  transition: all 0.85s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform: rotateX(-15deg) rotateY(15deg);
+}
+._3dface {
+  overflow: hidden;
+  position: absolute;
+  border: 1px solid #888;
+  background: #FFF;
+  box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.1), 0 0 50px rgba(0, 0, 0, 0.3);
+  color: #333;
+  line-height: 500px;
+}
+._3dface--front {
+  width: 500px;
+  height: 500px;
+  transform: translate3d(0, 0, 250px);
+}
+._3dface--top {
+  width: 500px;
+  height: 500px;
+  transform: rotateX(90deg) translate3d(0, 0, 250px);
+}
+._3dface--bottom {
+  width: 500px;
+  height: 500px;
+  transform: rotateX(-90deg) translate3d(0, 0, 250px);
+}
+._3dface--left {
+  width: 500px;
+  height: 500px;
+  left: 50%;
+  margin-left: -250px;
+  transform: rotateY(-90deg) translate3d(0, 0, 250px);
+}
+._3dface--right {
+  width: 500px;
+  height: 500px;
+  left: 50%;
+  margin-left: -250px;
+  transform: rotateY(90deg) translate3d(0, 0, 250px);
+}
+._3dface--back {
+  width: 500px;
+  height: 500px;
+  transform: rotateY(180deg) translate3d(0, 0, 250px);
+}
+#radio-opp:checked ~ .space3d ._3dbox {
+  transform: rotateX(-60deg) rotateY(-180deg);
+  transition-duration: 0.8s;
+}
+#radio-me:checked ~ .space3d ._3dbox {
+  transform: rotateX(-60deg) rotateY(0deg);
+  transition-duration: 0.8s;
+}
+
+
+._3dface--front {
+  background: url(box.jpg);
+  background-size: auto 100%;
+}
+
+._3dface--back {
+  background: url(box.jpg);
+  background-size: auto 100%;
+}
+._3dface--top {
+  background: url(box.jpg);
+  background-size: auto 100%;
+}
